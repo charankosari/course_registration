@@ -1,0 +1,32 @@
+.unauthorized-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3f4f6; /* Equivalent to bg-gray-100 */
+}
+
+.unauthorized-content {
+    background-color: #ffffff; /* Equivalent to bg-white */
+    padding: 2rem; /* Equivalent to p-8 */
+    border-radius: 0.5rem; /* Equivalent to rounded */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-md */
+}
+
+.unauthorized-title {
+    font-size: 1.875rem; /* Equivalent to text-3xl */
+    font-weight: bold; /* Equivalent to font-bold */
+    color: #dc2626; /* Equivalent to text-red-600 */
+    margin-bottom: 1rem; /* Equivalent to mb-4 */
+}
+
+.unauthorized-message {
+    font-size: 1.125rem; /* Equivalent to text-lg */
+    color: #4b5563; /* Equivalent to text-gray-700 */
+    margin-bottom: 1rem; /* Equivalent to mb-4 */
+}
+
+.unauthorized-link {
+    color: #059669; /* Equivalent to text-green-500 */
+    text-decoration: underline;
+}
