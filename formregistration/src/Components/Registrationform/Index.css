@@ -1,115 +1,140 @@
 .registration-form-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    margin-top: 20px;
-  }
-  
-  .form-title {
-    text-align: center;
-  }
-  
-  .course-info {
-    text-align: center;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .input {
-    width: 100%;
-    padding: 8px;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-  
-  .submit-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .submit-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  .submit-btn:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  .loader {
-    width: 48px;
-    height: 48px;
-    background: #353535;
-    display: block;
-    margin: 20px auto;
-    position: relative;
-    box-sizing: border-box;
-    animation: rotationBack 1s ease-in-out infinite reverse;
-  }
-  
-  .loader::before {
-    content: '';
-    box-sizing: border-box;
-    left: 0;
-    top: 0;
-    transform: rotate(45deg);
-    position: absolute;
-    width: 48px;
-    height: 48px;
-    background: #2e2e2e;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  }
-  
-  .loader::after {
-    content: '';
-    box-sizing: border-box;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    background: rgb(0, 0, 0);
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  }
-  
-  @keyframes rotationBack {
-    0% {
-      transform: rotate(0deg);
-    }
-  
-    100% {
-      transform: rotate(-360deg);
-    }
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.input, .select {
+  width: calc(100% - 10px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #555;
+}
+
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5H7z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+  background-size: 24px auto;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.form-group.inline {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-group.inline .form-field {
+  flex-basis: 48%;
+}
+
+.form-group.inline .form-field.label-left {
+  margin-right: 10px;
+}
+
+
+
+
+.loader {
+  width: 48px;
+  height: 48px;
+  background: #353535;
+  display: block;
+  margin: 20px auto;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotationBack 1s ease-in-out infinite reverse;
+}
+
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  left: 0;
+  top: 0;
+  transform: rotate(45deg);
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background: #2e2e2e;
+  box-shadow: 0 0 5
+}
+
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: rgb(0, 0, 0);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure the loader is on top of other elements */
+}
+
+
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
   }
 
-  .loader-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999; /* Ensure the loader is on top of other elements */
+  100% {
+    transform: rotate(360deg);
   }
+}
+

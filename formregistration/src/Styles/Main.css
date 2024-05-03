@@ -31,7 +31,9 @@ body {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;
+    object-fit: contain;
     padding: 10px;
+    height: 200px;
     text-align: center;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
@@ -42,6 +44,6 @@ body {
   }
 
   .course-box img{
-      height: 200px;
+      /* height: 200px; */
       width: 200px;
   }

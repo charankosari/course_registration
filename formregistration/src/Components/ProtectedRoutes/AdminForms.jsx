@@ -38,17 +38,22 @@ function AdminForms() {
                     <div key={index} className="course-section">
                         <h2>{courseName}</h2>
                         <div className="forms-grid">
-                            {forms.map((form, index) => (
-                                <div key={index} className="form-card">
-                                    
-                                    <p><strong>Student name:</strong> {form.name}</p>
-                                    <p><strong>Email:</strong> {form.email}</p>
-                                    <p><strong>Phone:</strong> {form.phone}</p>
-                                    <p><strong>Roll:</strong> {form.roll}</p>
-                                    <p><strong>College:</strong> {form.College}</p>
-                                    <p><strong>Created At:</strong> {new Date(form.createdAt).toLocaleString()}</p>
-                                </div>
-                            ))}
+                        {forms.map((form, index) => (
+    <div key={index} className="form-card">
+        <p><strong>Student name:</strong> {form.name}</p>
+        <p><strong>Email:</strong> {form.email}</p>
+        <p><strong>Phone:</strong> {form.phone}</p>
+        <p><strong>Roll:</strong> {form.roll}</p>
+        <p><strong>College:</strong> {form.College}</p>
+        <p><strong>Birthday:</strong> {form.birthday}</p>
+        <p><strong>Gender:</strong> {form.gender}</p>
+        <p><strong>Address:</strong> {form.address}</p>
+        <p><strong>Pincode:</strong> {form.pincode}</p>
+        <p><strong>Course Name:</strong> {form.CourseName}</p>
+        <p><strong>Created At:</strong> {new Date(form.createdAt).toLocaleString()}</p>
+    </div>
+))}
+
                         </div>
                     </div>
                 ))}

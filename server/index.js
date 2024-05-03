@@ -51,41 +51,51 @@ const UserSchema = new mongoose.Schema({
   
   const UserModel = mongoose.model("users", UserSchema);
 
-  const FormSchema =new mongoose.Schema(
+  const FormSchema = new mongoose.Schema(
     {
-      name:{
-        type:String,
-        required:true
-      },
-      email:{
-        type:String,
-        required:true
-      },
-      phone:{
-        type:Number,
-        required:true
-      },
-      roll:{
-        type:String,
-        required:true
-      },
-      phone:{
-        type:String,
-        required:true
-      },
-      CourseName:{
-        type:String,
-        required:true
-      },
-      College:{
-        type:String,
-        required:true
-      },
+        name: {
+            type: String,
+            required: true
+        },
+        email: {
+            type: String,
+            required: true
+        },
+        phone: {
+            type: Number, // Assuming it's a number
+            required: true
+        },
+        roll: {
+            type: String,
+            required: true
+        },
+        gender: {
+            type: String,
+            enum: ['male', 'female', 'others'] // gender should be one of these values
+        },
+        birthday: {
+            type: Date // Assuming it's a date
+        },
+        address: {
+            type: String
+        },
+        pincode: {
+            type: String // Assuming pincode can be a string
+        },
+        CourseName: {
+            type: String,
+            required: true
+        },
+        College: {
+            type: String,
+            required: true
+        }
+    },
+    {
+        timestamps: true // Add timestamps option
     }
-    , {
-      timestamps: true // Add timestamps option
-  }
-  )
+);
+
   const FormModel = mongoose.model("form",FormSchema)
 
   const CourseSchema = new mongoose.Schema({
@@ -141,32 +151,24 @@ const UserSchema = new mongoose.Schema({
 
   app.post('/course-register', async (req, res) => {
     try {
-      const { name, roll, College, email, phone, CourseName } = req.body;
-  
-      // Check if the email already exists
-     
+      // Extract form data from request body
+      const formData = req.body;
     
-      // Hash the password
-  
-      // Create a new user
-      const newForm = new FormModel({
-        name,
-        roll,
-        College,
-        email,
-        phone,
-        CourseName,
-       
-      });
-      // Save the user
+      // Create a new form instance
+      const newForm = new FormModel(formData);
+      
+      // Save the form
       await newForm.save();
+      
+      // Respond with success message
       res.status(201).json({ message: 'Registered successfully' });
     } catch (error) {
+      // Handle errors
       console.error('Error registering user:', error);
       res.status(500).json({ message: 'Internal Server Error' });
     }
   });
-
+  
 
 //
 
